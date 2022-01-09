@@ -1,0 +1,79 @@
+
+=================TOOLS REQUIRED====================
+POSTMAN, VSCODE, CHROME BROWSER, REDUX EXTENSION, NodeJS
+
+-----------------------------------------------------BACKEND----------------------------------------------------------------------------
+
+
+*******************MONGODB**************************
+Need to create different data schema for different data collection in model directory
+you also need some mongodb functions for fetching creating and deleting data in the database
+
+
+***************NODE AND EXPRESS*********************
+install express and mongoose
+install dev dependency nodemon for restarting again and again
+create mongodb online database and get connect URI for mongoose connection
+import express and mongoose start server using express and connect to db using mongoose
+create backend api and middleware if you need private endpoint pass it in the express router request functions.
+----------> You may need some middleware for avoiding CORS policy
+you need jwt for token creation to keep session private(package:jsonwebtoken)
+you need bcryptjs for hashing the pivate content like password
+
+
+----------->Authentication
+register route, login route, middleware for private routes
+
+==============DEPENDENCIES EXPLANATION==================
+
+* axios: for making request
+* bcryptjs: For hashing private data
+* concurrently: For running backend and frontend simmiltaneously
+* config : For hiding information(like mongoUri and jwtSecret) in local file from pushing somewhere else like Github
+* express: Backend server
+* jsonwebtoken: Foe making session using token
+* mongoose: for connecting database making schema and everything for MongoDB
+
+==============DEV DEPENDENCIES EXPLANATION==================
+
+* nodemon: for restaring server again and again AUTOMATICALLY
+
+
+----------------------------------------------------FRONTEND---------------------------------------------------------------------------
+********************REACT JS************************
+Make a client folder create react app in it.
+implement redux with static sample data(required packages:react-redux,redux,redux-thunk) 
+You reactstarp for pre-build react js components and bootstrap for styling.
+
+
+
+==============DEPENDENCIES EXPLANATION==================
+* bootstrap: Styling
+* react-redux: For getting acces to all data every component in application
+* react-transition-group: Styling and transition effect
+* reactstrap: For pre-build react js components
+* redux: For redux setup
+* redux-thunk: For middleware to create async actions
+* uuid: For generating unique Id
+ 
+==============DEV DEPENDENCIES EXPLANATION==================
+
+* react-devtools: For testing and debugging
+
+
+
+
+
+
+
+---------------------------------------NOTES-----------------------------------------------
+React
+nextjs
+gatsby
+strapi
+electron
+
+
+ADOBE, Photoshop, Figma
+Netlify-->static hosting
+cpannel hosting-->information
