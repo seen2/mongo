@@ -7,8 +7,12 @@ const saveUser = async (req) => {
 
   try {
     console.log(req.body);
-    const { name, email, address } = req.body;
-    const user = await User.create({ name, email, address });
+    const userData = req.body;
+    const user = await User.create({
+      ...userData,
+      createdDate: new Date(req.body.createdDate),
+      updatedDate: new Date(req.body.updatedDate),
+    });
     user.save();
     msg = "User Created";
   } catch (error) {
