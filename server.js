@@ -7,6 +7,8 @@ const path = require("path");
 //using config for securing in default.json
 const mongoURI = config.get("mongoURI");
 const mongoLocalURI = config.get("mongoLocalURI");
+//Schema
+const User = require("./models/User");
 
 //Middleware
 // deprecated
