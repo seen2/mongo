@@ -1,0 +1,13 @@
+{
+  "name": "Tom Doe",
+  "email": "jd@domain.com",
+  "address": {
+    "street": "Wall Street",
+    "city": "NYC"
+  },
+  "hobbies": ["Coding", "Listening Music"],
+  "age": 19,
+  "createdDate": "09/01/2021",
+  "updatedDate": "09/01/2023",
+  "bestFreind": "61dadf155430217bdae82c02"
+}

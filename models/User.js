@@ -25,8 +25,30 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   updatedDate: Date,
-  bestFreind: mongoose.SchemaTypes.ObjectId,
+  bestFreind: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "users",
+  },
   hobbies: [String],
 });
 
-module.exports = mongoose.model("user", UserSchema);
+UserSchema.methods.sayName = function () {
+  return `${this.name}`;
+};
+
+UserSchema.statics.getAllByName = function (name) {
+  return this.where("name").equals(name);
+};
+
+UserSchema.virtual("namedEmail").get(function () {
+  return `${this.name} <${this.email}>`;
+});
+
+//middleware
+UserSchema.pre("save", function (next) {
+  this.createdDate = Date.now();
+  next();
+});
+// UserSchema.post('')
+
+module.exports = mongoose.model("users", UserSchema);

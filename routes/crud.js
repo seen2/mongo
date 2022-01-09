@@ -36,7 +36,6 @@ Read Data(User)
 */
 
 router.get("/", (req, res) => {
-  console.log(req.body);
   try {
     fetchUser(req)
       .then((result) => {

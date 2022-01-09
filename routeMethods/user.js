@@ -23,17 +23,28 @@ const saveUser = async (req) => {
 };
 
 const fetchUser = async (req) => {
-  let msg;
+  let users = [];
 
   try {
     console.log(req.body);
-    const { name, email, address } = req.body;
-    console.log(name, email, address);
-    msg = "User Fetched";
+    const { userId, age, name } = req.body;
+    users = userId ? [await User.findById(userId)] : [...users];
+    users = age
+      ? [...users, ...(await User.where("age").equals(age))]
+      : [...users];
+    users = name ? [...users, ...(await User.getAllByName(name))] : [...users];
+    console.log("----------");
+    // console.log(await User.getAllByName(name));
+    // users =
+    //   email && name
+    //     ? [...users, await User.findOne({ name, email }).namedEmail]
+    //     : users;
+    const user = await User.findOne({ name });
+    console.log(user.namedEmail);
   } catch (error) {
-    msg = error.message;
+    users = error.message;
   } finally {
-    return { msg };
+    return { users };
   }
 };
 
