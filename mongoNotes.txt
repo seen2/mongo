@@ -46,3 +46,22 @@ persons=[{firstName:"Mark" , lastName:"Zuckerberg"}]
 for array we can use find({"persons.0.firstName":"Mark"})
  we can also use regex as follows
  {"persons.0.firstName":{$regex:"Zuc\w+"}}
+ ---------------------------------------------------------------------------------------------------------------------------------------------
+ Instead of find we can use aggrigation Frame work
+ 
+ db.<collection>.aggregate([
+                             {"$match":{"<field1>":"value1"}},
+                             {"$project":{"<field1>":1}}
+                             ]); 
+Pipeline:
+execution order match->project->...
+ ------------------------------------------------------------------------
+ 
+ db.<collection>.aggregate([
+                             {"$project":{"<field1>":1}},
+                             {"$group":{"newKey":"$<field1>.property","newKey1":{$sum:"field1.property1"}}
+                             ]); 
+Factory Pipeline:
+execution order project->group->...
+field1 should be same in both level because of eduction order supply
+like group by in sql
