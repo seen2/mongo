@@ -1,0 +1,28 @@
+mongo store data in BSON(have more data types then JSON and space efficient also fast) and view in JSON
+
+mongorestor -- export in BSON
+mongodump -- import in BSON
+
+mongoExport --export in JSOn
+mongoImport --emport in JSON
+
+MQL- find updateMany delete insertMany
+
+relational operators
+$ne
+$eq
+$lt
+$gt
+$lt
+$gte
+
+--logical operators
+$and $or $nor :[<expression>,<expression>]
+$not:{<expression>}
+
+$not -- only used with other logical operators
+
+$expr --> to evaluate the expression based on the variables(variable should attached wit $ like $variable) within same document to evaluate an expression
+
+arrayname: {$size:10, $all:["itemTobeMatch"]} will match array of length 10 having itemTobeMatch in it
+$push:{ arr:"x"} --> will push to array or create new array and push to it
