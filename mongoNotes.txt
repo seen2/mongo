@@ -65,3 +65,8 @@ Factory Pipeline:
 execution order project->group->...
 field1 should be same in both level because of eduction order supply
 like group by in sql
+
+example:
+db.listingsAndReviews.aggregate([{$project:{room_type:1,beds:1}},{$group:{"_id":"$room_type","totalBeds":{$sum:"$beds"}}}])
+
+
