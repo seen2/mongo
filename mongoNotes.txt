@@ -26,3 +26,17 @@ $expr --> to evaluate the expression based on the variables(variable should atta
 
 arrayname: {$size:10, $all:["itemTobeMatch"]} will match array of length 10 having itemTobeMatch in it
 $push:{ arr:"x"} --> will push to array or create new array and push to it
+
+Projection
+
+find({<quwery>},{projection}) ie find({var1:"val1"},{field1:1 field2:1}) return list with fiel1 and field 2
+find({<quwery>},{projection}) ie find({var1:"val1"},{field1:0 field2:0}) return list without fiel1 and field 
+
+can't mix 0 and 1 in projection except for _id=0
+
+
+for araay projection
+find({<quwery>},{projection}) ie find({var1:"val1"},{field1:{$eleMatch:{score:{"$gt:85} }} field2:0}) may return some id for extra document(data)
+
+$eleMatch can be used directly in query find({field1:{$eleMatch:{score:{"$gt:85} }}})
+
