@@ -40,3 +40,9 @@ find({<quwery>},{projection}) ie find({var1:"val1"},{field1:{$eleMatch:{score:{"
 
 $eleMatch can be used directly in query find({field1:{$eleMatch:{score:{"$gt:85} }}})
 
+
+use . (dot) notation to match subdocument(nested object)
+persons=[{firstName:"Mark" , lastName:"Zuckerberg"}]
+for array we can use find({"persons.0.firstName":"Mark"})
+ we can also use regex as follows
+ {"persons.0.firstName":{$regex:"Zuc\w+"}}
