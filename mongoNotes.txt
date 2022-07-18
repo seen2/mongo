@@ -70,3 +70,4 @@ example:
 db.listingsAndReviews.aggregate([{$project:{room_type:1,beds:1}},{$group:{"_id":"$room_type","totalBeds":{$sum:"$beds"}}}])
 
 
+sort limit and indexes
